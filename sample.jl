@@ -1,55 +1,20 @@
-# println関数で結果を出力。「#」でコメントできる
-# 文字列は「"」で囲む。「'」が使えないから不便
-# 「,」で分けられるが、空白は入らない
-println("Hello", "World!")
 
+# file = open("a.txt", "w")
+# count = 0
+# for i in 0:1200
+#     tmp = "ring_xnor_p2 ro$i (.start(ro_mode[$count]), .clk_s(clk_in[$count]));\n"
+#     write(file, tmp)
+#     global count += 2
+# end
+# close(file)
 
-
-
-println("==== 算術演算 ====")
-x = -3   # 代入
-y = 5
-println("+x        = ", +x)
-println("-x        = ", -x)
-println("x + y     = ", x + y)
-println("x - y     = ", x - y)
-println("x * y     = ", x * y)
-println("x / y     = ", x / y)
-println("div(x, y) = ", div(x, y))   # ÷ も使えるけどREPLで説明する
-println("x ^ y     = ", x ^ y)
-println("x % y     = ", x % y)
-
-
-
-
-println("==== ビット演算 ====")
-println("~x      = ", ~x)
-println("x & y   = ", x & y)
-println("x | y   = ", x | y)
-println("x >>> y = ", x >>> y)   # 論理右シフト 最上位桁の値は0になる
-println("x >> y  = ", x >> y)    # 算術右シフト 最上位桁の値は1になる
-println("x << y  = ", x << y)
-
-
-
-
-# 複合代入演算子 += などは省略
-
-
-
-
-println("==== ブール演算 ====")
-a = false   # true や false は小文字
-b = true
-println("!a        = ", !a)
-println("a & b     = ", a & b)
-println("a | b     = ", a | b)
-println("xor(a, b) = ", xor(a, b))  # ⊻ も使えるけどREPLで説明する
-println("x == y    = ", x == y)
-println("x != y    = ", x != y)
-println("x < y     = ", x < y)
-println("x <= y    = ", x <= y)
-println("x > y     = ", x > y)
-println("x >= y    = ", x >= y)
-z = 8
-println("x < y < z = ", x < y < z)
+file = open("b.txt", "w")
+count = 0
+count2 = 31
+for i in 0:450
+    tmp = "counter counter$i(.clk(clk_out[$count]), .rst(fsa), .c1000(Q[$count2:$(count2-31)]));\n"
+    write(file, tmp)
+    global count += 2
+    global count2 += 32
+end
+close(file)
