@@ -1,7 +1,7 @@
 
 file = open("a.txt", "w")
 count = 2
-for i in 0:100
+for i in 0:150
     tmp = "ring_xnor_p2 ro$i (.start(ro_mode[$count]), .clk_s(clk_in[$count]));\n"
     write(file, tmp)
     global count += 2
